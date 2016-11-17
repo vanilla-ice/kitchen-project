@@ -4,14 +4,15 @@ import { connect } from 'react-redux';
 import { increment } from './counter';
 import cn from 'classnames';
 
+import Header from './components/Header';
+
 class App extends Component {
   render() {
-    const { count } = this.props;
+    //const { count } = this.props;
 
     return (
       <div className={cn(styles.app, styles.rootApp)}>
-        <button onClick={ this.props.increment }>тык</button>
-        <h1> {count} </h1>
+        <Header />
       </div>
     );
   }
