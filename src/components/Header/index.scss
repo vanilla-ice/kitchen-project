@@ -1,5 +1,26 @@
 @import "../../constants/styles/vars.scss";
 
 .header {
-  color: $black;
+  background: $blue;
+  color: $white;
+  padding: 20px 0;
+}
+
+.top {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 130px;
+}
+
+.bottom {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
