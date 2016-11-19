@@ -148,6 +148,11 @@ module.exports = {
           limit: 10000,
           name: 'static/media/[name].[hash:8].[ext]'
         }
+      },
+
+      {
+        test: /\.xml$/,
+        loader: 'xml-loader'  // will load all .xml files with xml-loader by default
       }
     ]
   },
