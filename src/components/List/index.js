@@ -26,7 +26,6 @@ class List extends Component {
   }
 
   renderSlider( categoryList ) {
-    console.log(categoryList);
 
     let result = [];
     for(let good of categoryList) {
@@ -37,7 +36,6 @@ class List extends Component {
   }
 
   render() {
-
     return (
       <div className={styles.List}>
         <div className={global.container}>
