@@ -7,13 +7,10 @@ import Item from '../Item';
 
 class List extends Component {
 
-  renderSlider(isShown/*, list*/) {
-    return isShown ? <Item /*list={list} key={list.order}*//> : null
-  }
-
   initSliders() {
-    let cats = new Map();
+    let cats = this.props.list.categoriesMap;
     const categories = this.props.list.categories;
+
 
     for(let item of categories) {
       cats.set(Number(item.$.id), []);
@@ -28,18 +25,23 @@ class List extends Component {
     return cats;
   }
 
-  render() {
+  renderSlider( categoryList ) {
+    console.log(categoryList);
 
-    const { list } = this.props;
+    let result = [];
+    for(let good of categoryList) {
+      result.push(<Item slides={good[1]} key={good[0]} />);
+    }
+
+    return result;
+  }
+
+  render() {
 
     return (
       <div className={styles.List}>
         <div className={global.container}>
-          {this.renderSlider(list.ui.kitchenHood /*list.data.kitchenHood.list*/)}
-          {this.renderSlider(list.ui.hob /*list.data.hob.list*/)}
-          {this.renderSlider(list.ui.oven /*list.data.oven.list*/)}
-          {this.renderSlider(list.ui.dishwasher /*list.data.dishwasher.list*/)}
-          {this.renderSlider(list.ui.fridge /*list.data.fridge.list*/)}
+          {this.renderSlider(this.initSliders())}
         </div>
       </div>
     )

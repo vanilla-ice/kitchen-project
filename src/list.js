@@ -3,27 +3,16 @@ import data from './birzha-kuhon-rf.xml';
 const TOGGLE_SLIDER = 'TOGGLE_SLIDER';
 const data_shop = data.yml_catalog.shop[0];
 
-/*const initObjectsFromArray = (arr) => {
-  let object = {};
 
-  return arr.map((obj, i) => {
-    return object;
-  });
-};*/
 
 const initialState = {
-  ui: {
-    kitchenHood: true,
-    hob: true,
-    oven: true,
-    dishwasher: false,
-    fridge: false
-  },
+  //ui: data_shop.categories[0].category,
 
   goods: data_shop.offers[0].offer,
 
-  categories: data_shop.categories[0].category
+  categories: data_shop.categories[0].category,
 
+  categoriesMap: new Map()
 };
 
 export default function reducer(state = initialState, action = {}) {
