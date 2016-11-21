@@ -3,10 +3,10 @@ import styles from './index.scss';
 
 import check_icon from '../../assets/images/checked.svg';
 
-const Checkbox = ({ checked, img, title, onClick }) => {
+const Checkbox = ({ checked, img, title, onClick, category_id }) => {
 
   return (
-    <div className={styles.checkbox} onClick={onClick}>
+    <div className={styles.checkbox} onClick={onClick} id={category_id}>
       {
         checked ? <img src={check_icon} className={styles.icon} alt="" /> : null
       }
@@ -16,6 +16,12 @@ const Checkbox = ({ checked, img, title, onClick }) => {
       </div>
 
       <div className={styles.title}>{title}</div>
+
+      <select className={styles.select}>
+        <option className={styles.option}> test </option>
+        <option className={styles.option}> test </option>
+        <option className={styles.option}> test </option>
+      </select>
     </div>
   )
 

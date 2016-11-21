@@ -1,4 +1,15 @@
-const TOGGLE_SLIDER = 'TOGGLE_SLIDER'
+import data from './birzha-kuhon-rf.xml';
+
+const TOGGLE_SLIDER = 'TOGGLE_SLIDER';
+const data_shop = data.yml_catalog.shop[0];
+
+/*const initObjectsFromArray = (arr) => {
+  let object = {};
+
+  return arr.map((obj, i) => {
+    return object;
+  });
+};*/
 
 const initialState = {
   ui: {
@@ -9,113 +20,10 @@ const initialState = {
     fridge: false
   },
 
-  data: {
-    kitchenHood: {
-      order: 1,
-      list: [
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        }
+  goods: data_shop.offers[0].offer,
 
-      ]
-    },
-    hob: {
-      order: 2,
-      list: [
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        }
+  categories: data_shop.categories[0].category
 
-      ]
-    },
-    oven: {
-      order: 3,
-      list: [
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        }
-
-      ]
-    },
-    dishwasher: {
-      order: 4,
-      list: [
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        }
-
-      ]
-    },
-    fridge: {
-      order: 5,
-      list: [
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        },
-        {
-          name: 'ge234',
-          img: 'http://remontechnik.ru/uploads/attachments/article/2015-03-17/1436704364/originals/record_115941390.jpg',
-          price: '2'
-        }
-
-      ]
-    },
-  }
 };
 
 export default function reducer(state = initialState, action = {}) {
