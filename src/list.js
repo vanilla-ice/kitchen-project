@@ -12,7 +12,9 @@ const initialState = {
 
   categories: data_shop.categories[0].category,
 
-  categoriesMap: new Map()
+  categoriesMap: new Map(),
+
+  categoriesToShow: 3
 };
 
 export default function reducer(state = initialState, action = {}) {

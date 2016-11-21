@@ -11,9 +11,19 @@ class List extends Component {
     let cats = this.props.list.categoriesMap;
     const categories = this.props.list.categories;
 
+    let visibleCategories = categories.slice(0, this.props.list.categoriesToShow);
 
-    for(let item of categories) {
-      cats.set(Number(item.$.id), []);
+    for(let category of categories) {
+      let index = visibleCategories.indexOf(category);
+
+      category.$.id = Number(category.$.id);
+      category.visible = false;
+
+      if (index !== -1) {
+        category.visible = true;
+        visibleCategories.splice(index, 1);
+      }
+      cats.set(category.$.id, []);
     }
 
     const goods = this.props.list.goods;
