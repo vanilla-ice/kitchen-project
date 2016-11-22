@@ -26,7 +26,7 @@ function initState() {
   // init categories
   for(let category of categories) {
     //console.log(category);
-    
+
     category.$.id = Number(category.$.id);
     category.visible = visibleSource.indexOf(category) !== -1;
 
@@ -35,12 +35,10 @@ function initState() {
     categoryOffers.set(category.$.id, []);
     visibleCategories.set(category.$.id, category.visible);
   }
-  
+
   for(let item of goods) {
     categoryOffers.get(Number(item.categoryId)).push(item);
   }
-
-  console.log(categoryOffers);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 }
 
 initState();
