@@ -10,19 +10,33 @@ import logo from '../../assets/images/slider-button.png';
 import icon1 from '../../assets/images/checkbox_icon1.svg';
 
 class Header extends Component {
+  prepareCheckboxes() {
+    const categories = this.props.list.categoriesMap;
+
+    let result = [];
+    for(let category of categories.values()) {
+      result.push(
+        <Checkbox
+          className={styles.checkbox}
+          key={category.$.id}
+          checked={category.visible}
+          title={category._}
+          category_id={category.$.id}
+          img={icon1}
+          onClick={toggleSlider.bind(this, category.$.id)} />
+      );
+    }
+
+    return result;
+  }
 
   renderCheckboxes() {
-
+    const categories = this.props.list.categoriesMap;
     const { toggleSlider } = this.props;
-    const categories = this.props.list.categories;
 
     return (
       <div className={styles.bottom}>
-        <Checkbox className={styles.checkbox} checked title={categories[0]._} category_id={categories[0].$.id} img={icon1} onClick={ toggleSlider.bind(this, 'kitchenHood') }/>
-        <Checkbox className={styles.checkbox} checked title={categories[1]._} category_id={categories[1].$.id} img={icon1} onClick={ toggleSlider.bind(this, 'hob') } />
-        <Checkbox className={styles.checkbox} checked title={categories[2]._} category_id={categories[2].$.id} img={icon1} onClick={ toggleSlider.bind(this, 'oven') } />
-        <Checkbox className={styles.checkbox} checked title={categories[3]._} category_id={categories[3].$.id} img={icon1} onClick={ toggleSlider.bind(this, 'dishwasher') } />
-        <Checkbox className={styles.checkbox} checked title={categories[4]._} category_id={categories[4].$.id} img={icon1} onClick={ toggleSlider.bind(this, 'fridge') } />
+        {this.prepareCheckboxes()}
       </div>
     )
   }
