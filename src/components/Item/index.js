@@ -21,14 +21,14 @@ class Item extends Component {
   nextSlide() {
     let maxCount = this.props.slides.length
 
-    if (this.state.current + 1 < maxCount) {
+    if (this.state.current < maxCount - 1) {
       this.setState({
         current: ++this.state.current
       });
     }
     else {
       this.setState({
-        current: maxCount
+        current: maxCount - 1
       });
     }
 

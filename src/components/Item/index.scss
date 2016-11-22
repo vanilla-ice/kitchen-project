@@ -1,7 +1,11 @@
+@import "../../constants/styles/vars.scss";
+
 .item {
   white-space: nowrap;
   overflow: hidden;
   position: relative;
+  box-shadow: 0px 3px 6px 0px $box_shadow;
+  margin-top: 40px;
 }
 
 .slide {
@@ -9,7 +13,10 @@
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 25px 60px;
+  transition: transform .5s ease-in-out;
+  overflow: hidden;
+  min-height: 300px;
 }
 
 .arrow {
@@ -17,14 +24,14 @@
   top: 50%;
   background: transparent;
   transform: translateY(-50%);
-  right: 0;
+  right: 10px;
   z-index: 10;
   border: none;
   cursor: pointer;
   outline: none;
   padding: 0;
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
 
   img {
     display: block;
@@ -34,25 +41,41 @@
 
 .arrow_reverse {
   transform: translateY(-50%) rotate(180deg);
-  left: 0;
+  left: 10px;
 }
 
 .image {
-  max-width: 200px;
+  width: 200px;
   display: inline-block;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  margin-left: 5%;
 
   img {
     display: block;
     width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
 .about {
   display: inline-block;
   vertical-align: top;
+  margin-left: 5%;
 }
 
 .param_name,
 .param_value {
   display: inline-block;
+}
+
+.price {
+  position: absolute;
+  bottom: 25px;
+  right: 70px;
+  font-size: 30px;
 }
