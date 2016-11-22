@@ -10,44 +10,11 @@ import logo from '../../assets/images/slider-button.png';
 import icon1 from '../../assets/images/checkbox_icon1.svg';
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-
-    this.initState();
-  }
-
-  initState() {
-    let cats = this.props.list.categoriesMap;
-    const categories = this.props.list.categories;
-
-    let visibleCategories = categories.slice(0, this.props.list.categoriesToShow);
-
-    for(let category of categories) {
-      let index = visibleCategories.indexOf(category);
-      category.$.id = Number(category.$.id);
-      category.visible = false;
-
-      if (index !== -1) {
-        category.visible = true;
-        visibleCategories.splice(index, 1);
-      }
-      cats.set(category.$.id, []);
-    }
-
-    const goods = this.props.list.goods;
-
-    for(let item of goods) {
-      cats.get(Number(item.categoryId)).push(item);
-    }
-
-    return cats;
-  }
-
   prepareCheckboxes() {
-    const categories = this.props.list.categories;
+    const categories = this.props.list.categoriesMap;
 
     let result = [];
-    for(let category of categories) {
+    for(let category of categories.values()) {
       result.push(
         <Checkbox
           className={styles.checkbox}

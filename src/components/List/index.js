@@ -8,11 +8,12 @@ import Item from '../Item';
 class List extends Component {
   renderSliders() {
     const categoryList = this.props.list.categoriesMap;
-    
+    const categoryOffers = this.props.list.categoryOffers;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
     let result = [];
 
-    for(let good of categoryList) {
-      result.push(<Item slides={good[1]} key={good[0]} />);
+    for(let good of categoryList.values()) {
+      result.push(<Item slides={categoryOffers.get(good.$.id)} key={good.$.id} />);
     }
 
     return result;
