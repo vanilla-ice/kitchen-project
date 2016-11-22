@@ -3,8 +3,6 @@ import data from './birzha-kuhon-rf.xml';
 const TOGGLE_SLIDER = 'TOGGLE_SLIDER';
 const data_shop = data.yml_catalog.shop[0];
 
-
-
 const initialState = {
   //ui: data_shop.categories[0].category,
 
@@ -14,6 +12,7 @@ const initialState = {
 
   categoriesMap: new Map()
 };
+
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {

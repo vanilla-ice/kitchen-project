@@ -1,5 +1,58 @@
 .item {
-  display: flex;
-  flex-flow: row nowrap;
+  white-space: nowrap;
   overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 10;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.arrow_reverse {
+  transform: translateY(-50%) rotate(180deg);
+  left: 0;
+}
+
+.image {
+  max-width: 200px;
+  display: inline-block;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.about {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.param_name,
+.param_value {
+  display: inline-block;
 }
